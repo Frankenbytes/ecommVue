@@ -1,5 +1,6 @@
-import { createStore } from "vuex";
-import router from './router';
+import { createStore } from 'vuex' 
+import router from './router'; 
+
 
 export default createStore({
     state: {
@@ -7,23 +8,22 @@ export default createStore({
     },
     mutations: {
         LOGIN(state) {
-            state.isLoggedIn = true 
+            state.isLoggedIn = true
         },
         LOGOUT(state) {
             state.isLoggedIn = false
         }
     },
-
     actions: {
         login({ commit }) {
-            commit('LOGIN')
+        commit('LOGIN')
         },
         logout({ commit, dispatch }) {
-            commit('LOGOUT')
-            dispatch('navigateToLogin')
+        commit('LOGOUT');
+        dispatch('navigateToLogin');
         },
-        navigatToLogin() {
-            router.push({name: 'Login'});
+        navigateToLogin() {
+        router.push({ name: 'Login' });
         }
     }
-});
+})
