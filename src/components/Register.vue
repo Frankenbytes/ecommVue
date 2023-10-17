@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import axios from 'axios';
+import axios from '@/axios';
 
 export default {
 
@@ -40,6 +40,7 @@ export default {
                     password: this.password
 
                 });
+                this.$router.push('/login');
             }
             
             catch (error) {
